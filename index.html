@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<h2>what is Hoisting?</h2>
+		<p>
+			Hoisting in javascript means it led the function and variable at the top
+			of stack it means at the time of execution firstly in call stack
+			GEC(global execution context is pushed) so in GEC there are 2-phase
+			:1-->creation-Phase(Memory) and 2-->execution-phase(Code) --in creation
+			phase all the global variable are represent as undefined and for function
+			it return a complete function means copy of functional statement is
+			attached to it. --in execution phase the variable or function gets invoked
+			and values get assign to variable and function Note:Hoisting won't take
+			place in case of let and const variable Remember:for every function
+			invocation a excution context is created
+		</p>
+		<h2>what is lexical-scope and scope chain?</h2>
+		<p>
+			so Lexical scope is a concept applicable for nested function like currying
+			function ,closure ,etc. actually it very nice concept when function is
+			detached from its global space then also it can access value from its
+			outer function how it access is because of lexical scope so what happen is
+			that at the time of execution the most inner function checks variable in
+			locally if it is not found in its local memory then it check to its
+			reference to the parent of lexical environemnt again if its doesnt found
+			in its parent lexical environemnt then it will check to its grandparent
+			lexical environment ..it goes on checking up to its global exceution
+			context get completed. the method of chaining a lexical scope of
+			parentenvironemnt is know as scope chain
+		</p>
+		<h2>what is closure?</h2>
+		<p>
+			So closure is very important concept in javascript and its very useful
+			closure in a function is used to remember a value that can be used later
+			by some other function. so in given example the inner function is get
+			dettached from its global environment where outer function and its
+			variable present so what it do the inner function bind together with its
+			parent lexical environement so even though inner function is return it
+			gets in different scope and outer function is executed completely thought
+			the inner function can access value of x from its parent lexical
+			environment. and the variable x in inner function has Refernece to the
+			outer variabe x, so value doesnt persist its refernece persist. uses of
+			closure: 1.module design pattern 2.curring function 3.function like once
+			4.hiding and enapsuation of data to maintain data privacy
+		</p>
+		<h2>what is Block scope and Shadowing</h2>
+		<p>
+			Block:The group of statement inside a curly braces where javascript
+			expects a single statement from it. Scope:where the variable and functions
+			are decalared are scope to the block. With help of hoisting we can
+			identify that the let and const variable are assigned in block scope where
+			var varibale are assigned to undefined in global scope and if let and
+			scope defines in global space then it will go under script scope which is
+			global scope for let and const that's why let and const hoisting cant be
+			happen because its different from global scope. let and const can shadow
+			var and itself variable but var variable can't shadowing let and const its
+			illegal
+		</p>
+		<h2>what is let and const and temporarl dead zone</h2>
+		<p>
+			let and const are blocked scope varibale where separate memory has been
+			created (i.e script(global)) . these
+			<strong>variable are hoisted </strong> and its value are set to undefined
+			at initial phase i.e creation phase but we can't access its memory before
+			the varibale is initialize. Here comes temporarl dead zone into play ..It
+			is a Zone the time between the variable is decalred and till the variable
+			is initailized is known as temporarl dead zone. the phase from assigning
+			to initialzing is known as temporarl dead zone. we can't access any let
+			and const variable if it is under temporarl dead zone Note:- you can't use
+			same variable name in same scope except in var case. let variable can be
+			declare but const varible can't be re-declare
+		</p>
+		<h2>what is first class function or first class citizen</h2>
+		<p>
+			Because can be return as value.like function expression e.g var a=function
+			xyz(){ console.log("hello"); console.log(xyz) } in this type of function
+			are not hoisted because the var a is undefined at global space and
+			function xyz() is not created at global space it create separate memory
+			.so it can't be called at global space directly but it can be called
+			locallay inside a function as showin in log. --function can be pass as
+			argument also function can return another function.
+		</p>
+		<h2>what is CALLBACK?</h2>
+		<p>
+			callback is a function that can be called later throught the program when
+			it needed.A callback is a function that will be executed after another
+			function gets executed.
+
+			<li>Mainly it is used to handle asynchronus call</li>
+			<li>
+				In web api we can find cllbacks like in settimeout function also in
+				addEventlistener call.
+			</li>
+		</p>
+		<h2>what is higher order function?</h2>
+		<p>
+			Functions that operate on other functions, either by taking them as
+			arguments or by returning them, are called higher-order functions. Higher
+			order functions are a result of functions being first-class citizens in
+			javascript.
+			<li>
+				HOC function takes function/component as argument and return the same
+				function/component along with some additional functionality or
+				superpower
+			</li>
+		</p>
+		<h2>what is Polyfill?</h2>
+		<p>
+			It is a browser fallback if supposed there is no inbuilt bind function
+			,then we can use our custom bind function .E.g is present into script.js
+		</p>
+		<h2>what is Debouncing?</h2>
+		<p>
+			Debouncing is a concept to limit the rate of certain function what it will
+			do . It will take 2 parameter one is function and another one is timer.
+			Basically it is time difference between two time function is greater than
+			delay it doesnt make any uncessary call function .e.g searchbar in
+			e-commerce website
+			<input type="text" onclick="getData()" />
+		</p>
+		<h2>What is Currying?</h2>
+		<p>
+			Currying is an advanced technique to transform a function of arguments n,
+			to n functions of one or less arguments. For Example, if we have a
+			function f(a,b) , then the function after currying, will be transformed to
+			f(a)(b). By using the currying technique, we do not change the
+			functionality of a function, we just change the way it is invoked.
+			<li>it can be done by using binding and closure</li>
+		</p>
+		<script defer src="script.js" />
+		<script src="promise.js" />
+	</body>
+</html>
